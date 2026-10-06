@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Geist', sans-serif;
+  min-height: 100vh;
+  background: #0a0f0d;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(52, 211, 153, 0.35), transparent 40%),
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.15), transparent 35%),
+    radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.4), transparent 45%);
+  background-attachment: fixed;
+}
+
+.todo-container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.todo-container h1 {
+  color: #ffffff;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  border-bottom: 2px solid rgba(52, 211, 153, 0.6);
+  padding-bottom: 15px;
+}
+
+.category-section {
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.category-section select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Geist', sans-serif;
+  outline: none;
+  cursor: pointer;
+}
+
+.category-section select:focus {
+  border-color: #34d399;
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
+}
+
+.category-section select option {
+  background: #0e2a20;
+  color: #ffffff;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Geist', sans-serif;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+  border-color: #34d399;
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
+}
+
+button {
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(52, 211, 153, 0.85);
+  color: #06251a;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Geist', sans-serif;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(52, 211, 153, 0.5);
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.task-list li:hover {
+  background: rgba(52, 211, 153, 0.1);
+}
+
+.task-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+}
+
+.category-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #06251a;
+  background: rgba(52, 211, 153, 0.85);
+  padding: 2px 9px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.task-text {
+  color: #ffffff;
+  word-break: break-word;
+}
+
+.task-list li.completed {
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+.task-list li.completed .task-text {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.delete-btn {
+  background: rgba(255, 92, 92, 0.85);
+  padding: 6px 11px;
+  border-radius: 8px;
+  margin-left: 10px;
+  align-self: flex-start;
+}
+
+.delete-btn:hover {
+  box-shadow: 0 4px 16px rgba(255, 92, 92, 0.5);
+}
+
+.empty-msg {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
